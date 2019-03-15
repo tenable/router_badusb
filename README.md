@@ -25,7 +25,7 @@ The mikrotik_mitm directory contains configuration files to man-in-the-middle ou
 
 As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is.
 
-<img src="/images/mitm_diagram.png" height="75%" width="75%" />
+<img src="/images/mitm_diagram.png" height="25%" width="25%" />
 
 As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. I'm not sure of the root cause of this. I've been using a little ethernet adapter.
 
@@ -41,7 +41,7 @@ This is a non-mitm version of the MikroTik attack. The Pi will be assigned 192.1
 
 ## asus_bsides_routing_table
 
-<img src="/images/asus_pi.jpg" height="25%" width="25%" />
+<img src="/images/asus_pi.jpg" height="50%" width="50%" />
 
 The asus_bsides_routing_table directory contains configuration files to hijack traffic bound for http://securitybsides.com. The attack relies on the ability of the USB WAN to insert arbitrary entries into the router's routing table via DHCP options.
 
