@@ -11,9 +11,11 @@ The following hardware and software were used for the BadUSB atacks:
 * Raspbian Stretch (Version: November 2018)
 * P4wnP1 (Version: [9c8cc09a6503f10309c04310c3bba9c07caab8b7](https://github.com/mame82/P4wnP1/tree/9c8cc09a6503f10309c04310c3bba9c07caab8b7))
 
-![Assembled Platform](/images/pi.png "Assembled Platform")
+![Assembled Platform](/images/pi.jpg "Assembled Platform")
 
-* mikrotik_mitm
+---
+
+## mikrotik_mitm
 
 ![MikroTik BadUSB Attack](/images/mikrotik_pi.jpg "Raspberry Pi plugged into a MikroTik router")
 
@@ -25,11 +27,15 @@ As written the "remote" VPN server is at 192.168.1.64. If you are going to try t
 
 ![MITM Diagram](/images/mitm_diagram.png "MikroTik MITM Network Diagram")
 
-* mikrotik_network_only
+---
+
+## mikrotik_network_only
 
 This is a non-mitm version of the MikroTik attack. The Pi will be assigned 192.168.4.1 and it should have access to both the WAN and LAN. LAN devices should also be able to reach the Pi. This is kind of useful if you just want to plug in your Pi as some type of local server... or if you want a reverse shell out to the internet.
 
-* asus_bsides_routing_table
+---
+
+## asus_bsides_routing_table
 
 ![Asus BadUSB Attack](/images/asus_pi.jpg "Raspberry Pi plugged into a MikroTik router")
 
@@ -39,5 +45,7 @@ This attack was tested against an Asus RT-AC51U with load balancing dual WAN con
 
 [![PoC Video](http://img.youtube.com/vi/LvWo8fUaJdo/0.jpg)](http://www.youtube.com/watch?v=LvWo8fUaJdo)
 
-* traditional_hid
+---
+
+## traditional_hid
 *PoC Video*: 
