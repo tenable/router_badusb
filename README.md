@@ -48,4 +48,11 @@ This attack was tested against an Asus RT-AC51U with load balancing dual WAN con
 ---
 
 ## traditional_hid
-*PoC Video*: 
+
+A variety of routers support printer sharing (Netgear, Linksys, and TP-Link). The way this works is that you plug your USB printer into the router and then you install client software on your LAN host which gives it the ability to talk to the printer via the router.
+
+I've found that the router/client software will actually communicate with pretty much any USB device. For whatever reason, the device makers didn't limit the functionality to printers only.
+
+As such, an attacker can execute any of the normal payloads that come with P4wnP1. In my PoC video, I'm using hid_keyboard2.txt. The downside to this attack is that it requires special software be installed and that the user actually click "connect".
+
+[![PoC Video](http://img.youtube.com/vi/aoaB6hiHGiM/0.jpg)](http://www.youtube.com/watch?v=aoaB6hiHGiM)
