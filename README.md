@@ -11,13 +11,13 @@ The following hardware and software were used for the BadUSB atacks:
 * Raspbian Stretch (Version: November 2018)
 * P4wnP1 (Version: [9c8cc09a6503f10309c04310c3bba9c07caab8b7](https://github.com/mame82/P4wnP1/tree/9c8cc09a6503f10309c04310c3bba9c07caab8b7))
 
-![Assembled Platform](/images/pi.jpg "Assembled Platform")
+![Assembled Platform](/images/pi.jpg "Assembled Platform"){:height="50%" width="50%"}
 
 ---
 
 ## mikrotik_mitm
 
-![MikroTik BadUSB Attack](/images/mikrotik_pi.jpg "Raspberry Pi plugged into a MikroTik router")
+![MikroTik BadUSB Attack](/images/mikrotik_pi.jpg "Raspberry Pi plugged into a MikroTik router"){:height="50%" width="50%"}
 
 The mikrotik_mitm directory contains configuration files to man-in-the-middle outbound traffic from RouterOS LAN hosts. The configuration files were tested using RouterOS on an hAP with default configurations. Presumably, it works on any RouterOS based router that supports 4g USB functionality. The attack will cause all internet bound traffic to be routed to the Raspberry Pi plugged into the USB port. The Pi will forward all of the internet traffic to a remote VPN server.
 
