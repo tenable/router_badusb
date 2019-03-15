@@ -41,7 +41,7 @@ This is a non-mitm version of the MikroTik attack. The Pi will be assigned 192.1
 
 ## asus_bsides_routing_table
 
-<img src="/images/asus_pi.jpg" height="50%" width="50%" />
+<img src="/images/asus_pi.jpg" height="25%" width="25%" />
 
 The asus_bsides_routing_table directory contains configuration files to hijack traffic bound for http://securitybsides.com. The attack relies on the ability of the USB WAN to insert arbitrary entries into the router's routing table via DHCP options.
 
