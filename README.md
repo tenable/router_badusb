@@ -11,13 +11,13 @@ The following hardware and software were used for the BadUSB atacks:
 * Raspbian Stretch (Version: November 2018)
 * P4wnP1 (Version: [9c8cc09a6503f10309c04310c3bba9c07caab8b7](https://github.com/mame82/P4wnP1/tree/9c8cc09a6503f10309c04310c3bba9c07caab8b7))
 
-![Assembled Platform](/images/pi.jpg "Assembled Platform"){:height="50%" width="50%"}
+<img src="/images/pi.jpg" height="25%" width="25%" />
 
 ---
 
 ## mikrotik_mitm
 
-![MikroTik BadUSB Attack](/images/mikrotik_pi.jpg "Raspberry Pi plugged into a MikroTik router"){:height="50%" width="50%"}
+<img src="/images/mikrotik_pi.jpg" height="50%" width="50%" />
 
 The mikrotik_mitm directory contains configuration files to man-in-the-middle outbound traffic from RouterOS LAN hosts. The configuration files were tested using RouterOS on an hAP with default configurations. Presumably, it works on any RouterOS based router that supports 4g USB functionality. The attack will cause all internet bound traffic to be routed to the Raspberry Pi plugged into the USB port. The Pi will forward all of the internet traffic to a remote VPN server.
 
@@ -25,7 +25,7 @@ The mikrotik_mitm directory contains configuration files to man-in-the-middle ou
 
 As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is.
 
-![MITM Diagram](/images/mitm_diagram.png "MikroTik MITM Network Diagram")
+<img src="/images/mitm_diagram.png" height="75%" width="75%" />
 
 ---
 
@@ -37,7 +37,7 @@ This is a non-mitm version of the MikroTik attack. The Pi will be assigned 192.1
 
 ## asus_bsides_routing_table
 
-![Asus BadUSB Attack](/images/asus_pi.jpg "Raspberry Pi plugged into a MikroTik router")
+<img src="/images/asus_pi.jpg" height="50%" width="50%" />
 
 The asus_bsides_routing_table directory contains configuration files to hijack traffic bound for http://securitybsides.com. The attack relies on the ability of the USB WAN to insert arbitrary entries into the router's routing table via DHCP options.
 
