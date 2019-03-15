@@ -1,0 +1,31 @@
+# USB VID & PID. See: http://www.linux-usb.org/usb.ids
+USB_VID="0x1D6B"  # Linux Foundation
+USB_PID="0x0103"  # NCM (Ethernet) Gadget
+
+# Gadget features
+USE_ECM=true     # if true CDC ECM will be enabled
+USE_RNDIS=true   # if true RNDIS will be enabled
+USE_HID=false    # if true HID (keyboard) will be enabled
+USE_RAWHID=false # if true HID raw device will be enabled
+USE_UMS=false    # if true USB Mass Storage will be enabled
+
+# disable setting of static routes for all IPv4 addresses
+ROUTE_SPOOF=true
+
+# Network and DHCP options for Ethernet over USB
+IF_IP="192.168.4.1" 
+IF_MASK="255.255.255.252" 
+IF_DHCP_RANGE="192.168.4.2,192.168.4.2"
+
+function onNetworkUp()
+{
+	iptables -t nat -A PREROUTING -i usb1 -p tcp --dport 80 -j DNAT --to 192.168.4.1
+
+	ip route add 0.0.0.0/0 dev $active_interface
+	route add default gw 192.168.4.2
+
+	mkdir /home/pi/html/
+	cd /home/pi/html/
+	echo "<html><body><h3>lol</h3></body></html>" > index.html
+	python -m SimpleHTTPServer 80 &
+}
