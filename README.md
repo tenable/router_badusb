@@ -19,7 +19,7 @@ The following hardware and software were used for the BadUSB atacks:
 
 <img src="/images/mikrotik_pi.jpg" height="50%" width="50%" />
 
-The mikrotik_mitm directory contains configuration files to man-in-the-middle outbound traffic from RouterOS LAN hosts. The configuration files were tested using RouterOS on an hAP with default configurations. Presumably, it works on any RouterOS based router that supports 4g USB functionality. The attack will cause all internet bound traffic to be routed to the Raspberry Pi plugged into the USB port. The Pi will forward all of the internet traffic to a remote VPN server.
+The mikrotik_mitm directory contains configuration files to man-in-the-middle outbound traffic from RouterOS LAN hosts. The configuration files were tested using RouterOS on an hAP using default configurations on 6.44.1 Stable. Presumably, it works on any RouterOS based router that supports 4g USB functionality. The attack will cause all internet bound traffic to be routed to the Raspberry Pi plugged into the USB port. The Pi will forward all of the internet traffic to a remote VPN server.
 
 [![PoC Video](http://img.youtube.com/vi/3X7xrgan5Tk/0.jpg)](http://www.youtube.com/watch?v=3X7xrgan5Tk)
 
@@ -33,7 +33,7 @@ As mentioned, RouterOS will recognize the USB device using the default configura
 
 ---
 
-## mikrotik_network_only
+## mikrotik_wan_lan_access
 
 This is a non-mitm version of the MikroTik attack. The Pi will be assigned 192.168.4.1 and it should have access to both the WAN and LAN. LAN devices should also be able to reach the Pi. This is kind of useful if you just want to plug in your Pi as some type of local server... or if you want a reverse shell out to the internet.
 
