@@ -25,11 +25,11 @@ The mikrotik_mitm directory contains configuration files to man-in-the-middle ou
 
 As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is.
 
-<img src="/images/mitm_diagram.png" height="25%" width="25%" />
+<img src="/images/mitm_diagram.png" height="50%" width="50%" />
 
 As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. I'm not sure of the root cause of this. I've been using a little ethernet adapter.
 
-<img src="/images/usb_enet_adapter.jpg" height="50%" width="50%" />
+<img src="/images/usb_enet_adapter.jpg" height="25%" width="25%" />
 
 ---
 
@@ -53,7 +53,7 @@ This attack was tested against an Asus RT-AC51U with load balancing dual WAN con
 
 ## Traditional Attacks over IP
 
-<img src="/images/netgear_pi.jpg" height="50%" width="50%" />
+<img src="/images/netgear_pi.jpg" height="40%" width="40%" />
 
 A variety of routers support printer sharing (Netgear, Linksys, and TP-Link). The way this works is that you plug your USB printer into the router and then you install client software on your LAN host which gives it the ability to talk to the printer via the router.
 
