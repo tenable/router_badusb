@@ -27,7 +27,7 @@ As written the "remote" VPN server is at 192.168.1.64. If you are going to try t
 
 <img src="/images/mitm_diagram.png" height="75%" width="75%" />
 
-As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. And the other device only has to be plugged in for a second. I've been using a little ethernet adapter.
+As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. I'm not sure of the root cause of this. I've been using a little ethernet adapter.
 
 <img src="/images/usb_enet_adapter.jpg" height="50%" width="50%" />
 
