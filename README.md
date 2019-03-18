@@ -23,7 +23,15 @@ The mikrotik_mitm directory contains configuration files to man-in-the-middle ou
 
 [![PoC Video](http://img.youtube.com/vi/3X7xrgan5Tk/0.jpg)](http://www.youtube.com/watch?v=3X7xrgan5Tk)
 
-As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is.
+As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is. The VPN server configuration is fairly simple:
+
+```sh
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo openvpn --ifconfig 10.200.0.1 10.200.0.2 --dev tun --auth none
+sudo iptables -I FORWARD -i tun0 -j ACCEPT
+sudo iptables -I FORWARD -i tun0 -o ACCEPT
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+```
 
 <img src="/images/mitm_diagram.png" height="50%" width="50%" />
 
