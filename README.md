@@ -35,7 +35,7 @@ sudo iptables -t nat -A POSTROUTING -j MASQUERADE
 
 <img src="/images/mitm_diagram.png" height="50%" width="50%" />
 
-As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. I'm not sure of the root cause of this. I've been using a little ethernet adapter.
+As mentioned, RouterOS will recognize the USB device using the default configuration. However! For some reason, the router won't recognize the Pi until you first plug in something else. You only have to do it once and then you are good until the router reboots. I'm not sure of the root cause of this. I've been using this ethernet adapter (you can find it on Amazon):
 
 <img src="/images/usb_enet_adapter.jpg" height="25%" width="25%" />
 
