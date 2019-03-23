@@ -21,6 +21,8 @@ The following hardware and software were used for the BadUSB atacks:
 
 The mikrotik_mitm directory contains configuration files to man-in-the-middle outbound traffic from RouterOS LAN hosts. The configuration files were tested using RouterOS on an hAP using default configurations on 6.44.1 Stable. Presumably, it works on any RouterOS based router that supports 4g USB functionality. The attack will cause all internet bound traffic to be routed to the Raspberry Pi plugged into the USB port. The Pi will forward all of the internet traffic to a remote VPN server.
 
+*PoC Video:*
+
 [![PoC Video](http://img.youtube.com/vi/3X7xrgan5Tk/0.jpg)](http://www.youtube.com/watch?v=3X7xrgan5Tk)
 
 As written the "remote" VPN server is at 192.168.1.64. If you are going to try this out for yourself, you'll need to adjust the openvpn connection and possibly the iptables / dhcp options depending on where your VPN server is. The VPN server configuration is fairly simple:
@@ -55,6 +57,8 @@ The asus_bsides_routing_table directory contains configuration files to hijack t
 
 This attack was tested against an Asus RT-AC51U with load balancing dual WAN configured.
 
+*PoC Video:*
+
 [![PoC Video](http://img.youtube.com/vi/LvWo8fUaJdo/0.jpg)](http://www.youtube.com/watch?v=LvWo8fUaJdo)
 
 ---
@@ -68,5 +72,7 @@ A variety of routers support printer sharing (Netgear, Linksys, and TP-Link). Th
 I've found that the router/client software will actually communicate with pretty much any USB device. For whatever reason, the device makers didn't limit the functionality to printers only.
 
 As such, an attacker can execute any of the normal payloads that come with P4wnP1. In my PoC video, I'm using hid_keyboard2.txt. The downside to this attack is that it requires special software be installed and that the user actually click "connect".
+
+*PoC Video:*
 
 [![PoC Video](http://img.youtube.com/vi/aoaB6hiHGiM/0.jpg)](http://www.youtube.com/watch?v=aoaB6hiHGiM)
