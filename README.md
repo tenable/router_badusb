@@ -3,7 +3,7 @@ Material found in this repository was originally presented at [BSides Dublin](ht
 
 This repository contains configuration files for [P4wnP1](https://github.com/mame82/P4wnP1), a BadUSB framework for the Raspberry Pi. The configuration files allow an attacker to execute BadUSB style attacks on certain routers.
 
-The following hardware and software were used for the BadUSB atacks:
+The following hardware and software were used for the BadUSB attacks:
 
 * Raspberry Pi Zero
 * USB-A Addon
